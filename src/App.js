@@ -1,18 +1,33 @@
 import React from 'react';
 import './App.css';
-import Profile from './components/profilrcard';
-import Productcard from './components/productcard';
+import UserInfo from './components/UserInfo';
+import Statistics from './components/Statistics';
+import Messages from './components/Messages';
 
+const userinfo = {
+  name: "Mudassir Muneer",
+  email: "mudassir.muneer@gmail.com",
+  role: "Admin",
+  profilePicture: require('./images/profile.jpeg'),
+  };
+  const statistics = {
+    totalUsers: 10000,
+    activeUsers: 7000,
+    newSignups: 500,
+    activePercentage: 70,
+  };
+  const message = {
+    Message1: "Hello, Welcome to our website!",
+    Message2: "Thank you for visiting our website. We hope you find what you're looking for.",
+    Message3: "Let's get started!",
+  }
+  
 const App = () => {
   return (
     <div className="App">
-      <Profile name="Mudassir" age="20" occupation="student" location="Pakistan"/>
-      <Productcard 
-        title="Bugatti La Voiture Noire"
-        description="A masterpiece of automotive engineering, featuring unparalleled luxury and performance."
-        price={18.7}
-        imageUrl={require('./images/bugatti.png')}
-      />
+      <UserInfo user={userinfo} />
+      <Statistics statistics={statistics} />
+      <Messages message={message} />
     </div>
   );
 };

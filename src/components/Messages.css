@@ -1,0 +1,21 @@
+.messages-container {
+    flex-direction: column;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }
+  
+  .message-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message-text {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
