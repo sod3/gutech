@@ -1,0 +1,9 @@
+.navbar {
+  background-color: rgb(114, 114, 187);
+  color: #fff;
+  padding: 10px;
+}
+.list{
+    display: flex;
+    justify-content: space-between;
+}

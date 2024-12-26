@@ -1,19 +1,23 @@
 import React from 'react';
-import './App.css';
-import Counter from './lab09-2/counter';
-import Calculator from './lab09-2/calculator';
-import LoginForm from './lab09-2/login';
-import ShoppingCart from './lab09-2/shoppingcart2';
-
-const App = () => {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './lab10/ecommerce/home';
+import UserProfile from './lab10/ecommerce/userprofile';
+import Navbar from './lab10/ecommerce/navbar';
+import ShoppingCart from './lab10/ecommerce/shoppingcart';
+import ProductDetail from './lab10/ecommerce/productdetail';
+function App() {
   return (
-    <div className="App">
-      <Counter />
-      <Calculator />
-      <LoginForm />
-      <ShoppingCart />
-    </div>
-  );
-};
-
+   <Router>
+     <div>
+        <Navbar/>
+       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile/:username" element={<UserProfile />} />
+        <Route path="/shoppingcart" element={<ShoppingCart />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+       </Routes>
+     </div>
+  </Router>
+ );
+}
 export default App;
