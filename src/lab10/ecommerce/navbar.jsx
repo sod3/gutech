@@ -13,7 +13,6 @@ function Navbar() {
             <div className='links-container'>
                 <Link to="/">Home</Link>
                 <Link to="/profile/104">Profile</Link>
-                <Link to="/shoppingcart">Cart</Link>
             </div>
           </li>
        </ul>

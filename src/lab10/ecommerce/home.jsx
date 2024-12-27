@@ -21,7 +21,7 @@ function Home() {
     ];
 
     const handleAddToCart = (product) => {
-        setCart((prevCart) => [...prevCart, product]);
+        setCart([...cart, product]);
         alert(`${product.name} has been added to your cart!`);
     };
 
@@ -38,6 +38,7 @@ function Home() {
                     <option value="clothing">Clothing</option>
                     <option value="toys">Toys</option>
                 </select>
+                <Link to="/cart">Go to Cart ({cart.length})</Link>
             </div>
             <div className="content">
                 <h1>Welcome To The Online Shop</h1>
@@ -50,25 +51,55 @@ function Home() {
             <div className="products">
                 <h2>Our Products</h2>
                 <ul>
-                    {products.map((product) => (
-                        <li key={product.id}>
-                            <Link to={`/product/${product.id}`}>{product.name}</Link> - ${product.price}
-                            <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
-                        </li>
-                    ))}
+                    <li>
+                        <Link to="/product/1">Product 1</Link> - $10
+                        <button onClick={() => handleAddToCart(products[0])}>Add to Cart</button>
+                    </li>
+                    <li>
+                        <Link to="/product/2">Product 2</Link> - $20
+                        <button onClick={() => handleAddToCart(products[1])}>Add to Cart</button>
+                    </li>
+                    <li>
+                        <Link to="/product/3">Product 3</Link> - $5
+                        <button onClick={() => handleAddToCart(products[2])}>Add to Cart</button>
+                    </li>
+                    <li>
+                        <Link to="/product/4">Product 4</Link> - $100
+                        <button onClick={() => handleAddToCart(products[3])}>Add to Cart</button>
+                    </li>
+                    <li>
+                        <Link to="/product/5">Product 5</Link> - $50
+                        <button onClick={() => handleAddToCart(products[4])}>Add to Cart</button>
+                    </li>
+                    <li>
+                        <Link to="/product/6">Product 6</Link> - $50
+                        <button onClick={() => handleAddToCart(products[5])}>Add to Cart</button>
+                    </li>
+                    <li>
+                        <Link to="/product/7">Product 7</Link> - $20
+                        <button onClick={() => handleAddToCart(products[6])}>Add to Cart</button>
+                    </li>
+                    <li>
+                        <Link to="/product/8">Product 8</Link> - $30
+                        <button onClick={() => handleAddToCart(products[7])}>Add to Cart</button>
+                    </li>
+                    <li>
+                        <Link to="/product/9">Product 9</Link> - $40
+                        <button onClick={() => handleAddToCart(products[8])}>Add to Cart</button>
+                    </li>
+                    <li>
+                        <Link to="/product/10">Product 10</Link> - $10
+                        <button onClick={() => handleAddToCart(products[9])}>Add to Cart</button>
+                    </li>
+                    <li>
+                        <Link to="/product/11">Product 11</Link> - $20
+                        <button onClick={() => handleAddToCart(products[10])}>Add to Cart</button>
+                    </li>
+                    <li>
+                        <Link to="/product/12">Product 12</Link> - $5
+                        <button onClick={() => handleAddToCart(products[11])}>Add to Cart</button>
+                    </li>
                 </ul>
-            </div>
-            <div className="cart">
-                <h2>Shopping Cart</h2>
-                {cart.length > 0 ? (
-                    <ul>
-                        {cart.map((item, index) => (
-                            <li key={index}>{item.name} - ${item.price}</li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p>Your cart is empty.</p>
-                )}
             </div>
         </div>
     );
